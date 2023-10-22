@@ -1,0 +1,25 @@
+.News{
+  height: 512px;
+  width: 900px;
+
+  margin-top: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position:relative;
+  border: 2px solid #02505e;
+  overflow: hidden;
+}
+img.background{
+  position: absolute;
+  height: 512px;
+  width: 1024px;
+}
+.arrow{
+  background-color: #00000000;
+  border: none;
+  transform: translateZ(1px);
+}
+.arrow img{
+  height: 30px;
+}
