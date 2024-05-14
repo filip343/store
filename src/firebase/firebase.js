@@ -4,7 +4,7 @@ import { getAuth } from "firebase/auth";
 
 //coś zrobić z tymi danymi
 const firebaseConfig = {
-  apiKey: process.env,
+  apiKey: process.env.REACT_APP_API_KEY,
   authDomain: "store-fd42e.firebaseapp.com",
   projectId: "store-fd42e",
   storageBucket: "store-fd42e.appspot.com",
