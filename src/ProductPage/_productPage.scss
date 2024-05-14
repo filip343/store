@@ -1,0 +1,55 @@
+@forward './buyUI';
+
+.ProductPage{
+  
+  background: rgba(256, 256, 256, 0.401);
+  top:15%;
+  position: absolute;
+  padding: 4vw;
+  padding-top: 4vw;
+  left: 50%;
+  bottom:5%;
+  transform: translateX(-50%);
+  border-radius: 20px;
+  min-width:350px ;
+  width: 77vw;
+  height: fit-content;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: space-around;
+  row-gap: 20px;
+  label{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 650;
+    display: block;
+  }
+  &_imgs{
+    min-width: 300px;
+    min-height: 200px;
+    width:max-content;
+    max-width:600px;
+    height: min-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &_name{
+    font-size: 2.3rem;
+    width: 100%;
+    height:fit-content;
+  }
+  &_description{
+    margin-top: 5%;
+    text-align: center;
+    text-wrap:wrap;
+    width: 100%;
+    height: fit-content;
+    label{
+      margin-bottom: 2%;
+      font-size: 1.7rem;
+      width:100%
+    }
+  }
+
+}
+

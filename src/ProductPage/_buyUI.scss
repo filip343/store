@@ -1,0 +1,78 @@
+.ProductPage .BuyUI{
+  width:70vw;
+  height: fit-content;
+  max-width: 300px;
+  background: rgba(256, 256, 256, 0.401);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  padding: 3%;
+  padding-top: 2%;
+  *{
+    font-size: 1rem;
+  }
+  .container{
+    height: auto;
+    width:auto;
+
+    .name{
+      font-size: 1.7rem;
+      margin-bottom: 10%;
+    }
+    .price *{
+      margin-top: 3%;
+    }
+    .available{
+
+    }
+    .quantity{
+      margin:5%;
+      margin-right: 0;
+      margin-left: 15%;
+      border: solid black 1px;
+      border-radius: 2px;
+      height: 2rem;
+      width:fit-content;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      input{
+        background: none;
+        border: none;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        text-align: center;
+        width: 1.2rem;
+        aspect-ratio: 0.7;
+      }
+      button{
+        border: none;
+        height: 1.7rem;
+        aspect-ratio: 1;
+        background: none;
+      }
+    }
+    .buyBtns{
+
+      margin-top: 7%;
+      display:flex;
+      flex-wrap: wrap;
+
+      div{
+        background-color: #93bcc29d;
+        font-weight:400;
+        width: fit-content;
+        width:100%;
+        margin-bottom: 5%;
+      }
+    }
+  }
+
+
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

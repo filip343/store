@@ -1,37 +1,43 @@
-function ProductsGrid(){
+import { useState,useEffect } from "react";
+import Product from "./Product";
+
+
+function ProductsGrid(props){
+  const {filter,cltT,srch} = props;
+
+  useEffect(()=>{
+    window.scrollTo(0,0);
+  },[])
+
+  var [response,setResponse] = useState();
+
+  useEffect(()=>{
+    const options = {    method: "GET", 
+    headers: {
+      'Access-Control-Allow-Origin':"http://localhost:3000",
+      "Content-Type": "application/json"
+    }};
   
+    fetch(`http://localhost:8080/products?srtT=${filter}&cltT=${cltT===null?"":cltT}&srch=${srch===null?"":srch}`,options).then((data)=>{
+      
+      return data.json();
+  
+    }).then(data=>{
+      
+      setResponse(data);
+      
+      
+    }).catch((err)=>{console.log(err);});
 
-  getData();
+  },[filter,cltT,srch])
+  var numOfProd = [...Array(response===undefined?0:response.length).keys()];
 
-
-
-  return (<div className="productsGrid">
-
+  return (<div className="MainGrid_ProductsGrid">
+    {numOfProd.map((id)=>{
+      return <Product obj={response[id]} id={response[id]._id} />
+    })}
   </div>)
 }
-
-function getData(){
-
-  const options = {    method: "GET", 
-  mode: "cors", 
-  cache: "no-cache", 
-  credentials: 'include',
-  headers: {
-    'Access-Control-Allow-Origin':'http://localhost:3000',
-    "Content-Type": "text/html",
-    'Access-Control-Allow-Credentials':'true'
-  }};
-
-  fetch('http://localhost:8080/categories',options).then(async(data)=>{
-  
-    let json = await data.json()
-    return json;
-  })
-    .then(async (data)=>{console.log(data)})
-    .catch((err)=>{console.log(err);});
-
-}
-
 
 
 export default ProductsGrid;

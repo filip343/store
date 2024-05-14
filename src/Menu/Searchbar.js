@@ -1,16 +1,19 @@
+import React from "react";
 
 function Searchbar(){
-  return(
-  <div className="Searchbar">
-    <input type="text" onKeyDown={(event)=>PressedKey(event.key)}></input>
-  </div>
-  );
-  function PressedKey(key){
-    if(key=== 'Enter'){
-      //Wyszukiwanie w bazie danych
-      console.log('wyszukiwanie');
+
+  const PressedKey = (event)=>{
+    if(event.key=== 'Enter'){
+      window.location.href = `/products?cltT=&srch=${event.target.value}`;
     }
   }
+
+  return(
+  <div className="Menu_Searchbar">
+    <input type="text" onKeyDown={(event)=>PressedKey(event)}></input>
+  </div>
+  );
+
 }
 
 export default Searchbar;

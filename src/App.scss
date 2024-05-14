@@ -1,0 +1,35 @@
+@forward './Products/products';
+@forward './ProductPage/productPage';
+@forward './Menu/menu';
+@forward './MainView/mainView';
+@forward './ImgSlider/imgSlider';
+@forward './Signing/signing.scss';
+@use './assets/css/colors' as col;
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&family=Oswald:wght@500&family=Poppins:wght@500&display=swap');
+
+
+
+
+.App{
+  position: absolute;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  background: col.$main;
+  width: 100%;
+  min-width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+a{
+  color:black;
+  text-decoration: none;
+  cursor: pointer;
+}
+a,a:active,a:visited{
+  text-decoration: none;
+
+}
+.hide{
+  visibility: hidden;
+}

@@ -1,0 +1,23 @@
+.MainView{
+  
+  top: min(15vw,max(10%,(max(5vw,4vh) + 50px)));
+  left:50%;
+  transform: translateX(-50%);
+  aspect-ratio: 2;
+  width: 60%;
+  display: flex;
+
+
+  position:absolute;
+
+  overflow: hidden;
+
+  &_background{
+    position: absolute;
+    width: 100%;
+  }
+
+}
+
+
+

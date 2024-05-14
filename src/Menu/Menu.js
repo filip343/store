@@ -2,20 +2,19 @@ import Account from "./Account";
 import Searchbar from "./Searchbar";
 import Cart from "./Cart";
 import Categories from "./Categories";
-import './menu.css'
-
+import logo from '../assets/imgs/menu/Logo.png'
+import { Link } from "react-router-dom";
 
 function Menu() 
 {
-  return(<div className="Menu">
-    <img className='logo' src='images/menu/Logo.png' alt=''/>
+  return(<nav className="Menu">
+    <Link to={`/`} className="logo" ><img className='Menu_logo' src={logo} alt=''/></Link>
     <Categories/>
     <Searchbar/>
-    <div className="right">
-      <Cart/>
-      <Account/>
-    </div>
-  </div>)
+    <Cart/>
+    <Account/>
+
+  </nav>)
 }
 
 export default Menu;
