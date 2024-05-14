@@ -1,5 +1,5 @@
-import { auth } from "./firebase";
 import { createUserWithEmailAndPassword,signInWithEmailAndPassword,signInWithPopup,signInWithRedirect,GoogleAuthProvider, getRedirectResult } from "firebase/auth";
+import {auth} from './firebase'
 
 
 
