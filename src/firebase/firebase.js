@@ -2,7 +2,6 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 
-//coś zrobić z tymi danymi
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
   authDomain: "store-fd42e.firebaseapp.com",

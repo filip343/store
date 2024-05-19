@@ -5,17 +5,24 @@ export function BuyUI(params){
 
   const {prodId,available,price,name} = params;
   const [quantity,setQuantity] = useState(1);
+  const handleOnChange = (e)=>{
+    e.preventDefault();
+    changeQuantity(e);
+    if(e.target.value==="")
+    {
+      setQuantity(1);
+    }
+  }
   const changeQuantity=(e, direction=0)=>{
     var iqua = parseInt(quantity);
-
-
     var quantToSet=e===undefined?(iqua+ direction<1?quantity:iqua+direction): e.target.value;
     
     if(quantToSet>available)quantToSet=quantity;
-    setQuantity(quantToSet)
+    setQuantity(quantToSet);
+    console.log(direction);
   }
   const preventInput = (evt)=>{
-    var keys =["e","E","+","-",",","."]
+    var keys =["e","E","+","-",",",".","Enter"]
     if(evt.target.value.length===0){
       keys.push('0');
     }
@@ -53,9 +60,13 @@ export function BuyUI(params){
       <label className="name">{name}</label>
       <div className="available">AVAILABLE: {available}</div>
       <div className="quantity">
-        <button className="minus" onClick={()=>{changeQuantity(undefined,-1)}}> - </button>
-        <input onKeyDown={(evt)=>preventInput(evt)} value={quantity} onChange={(e)=>{changeQuantity(e)}} type="number" min={1}/>
-        <button className="plus" onClick={()=>{changeQuantity(undefined,1)}}> + </button>
+
+        <button className="minus" onClick={(e)=>{e.preventDefault();changeQuantity(undefined,-1)}}> - </button>
+        
+        <input onKeyDown={(evt)=>preventInput(evt)} value={quantity} onChange={(e)=>{handleOnChange(e)}} type="number" min={1}/>
+
+        <button className="plus" onClick={(e)=>{e.preventDefault();changeQuantity(undefined,1)}}> + </button>
+
       </div>
       <div className="price">
         <div className="perU">PER UNIT: ${price}</div>

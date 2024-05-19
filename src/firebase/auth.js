@@ -33,7 +33,6 @@ const getUserData = (uid)=>{
     return res.json();
 
   }).then(res=>{
-    
     localStorage.setItem("userData",JSON.stringify(res));
     localStorage.setItem("cart",JSON.stringify(res.cart));
     
@@ -101,6 +100,6 @@ export const doSignInWithGoogle = async()=>{
 export const doSignOut=()=>{
   return auth.signOut().then(()=>{
     localStorage.setItem("userData",null);
-    localStorage.setItem("cart","");
+    localStorage.setItem("cart",JSON.stringify([]));
   });
 }
