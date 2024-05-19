@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import accountIm from '../assets/imgs/menu/AccountImg.png';
 import { auth } from "../firebase/firebase";
 import { Link } from "react-router-dom";
 import { doSignOut } from "../firebase/auth";
+import accountIm from '../assets/imgs/menu/AccountImg.png';
 
 function Account(){
 
