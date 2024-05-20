@@ -1,26 +1,6 @@
 {
   "short_name": "React App",
   "name": "Create React App Sample",  "icons": [
-    {
-      "src": "assets/imgs/menu/cart.png",
-      "sizes": "612x612",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/imgs/menu/AccountImg.png",
-      "sizes": "200x200",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/imgs/menu/Logo.png",
-      "sizes": "1920x1332",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/imgs/news/0.png",
-      "sizes": "1024x512",
-      "type": "image/png"
-    }
   ],
   "start_url": "",
   "display": "standalone",
