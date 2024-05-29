@@ -5,20 +5,23 @@ import ProductPage from './ProductPage/ProductPage';
 import MainGrid from './Products/MainGrid';
 import { Route,Routes} from 'react-router-dom';
 import Signing from './Signing/Signing';
+import CartPage from './CartPage/CartPage';
 
 
 function App() {
   
-  function scrolled(){
+  const scrolled = ()=>{
     const {pathname} = window.location;
     if(pathname==='/'){
       sessionStorage.setItem('scrolled',document.querySelector(".App").scrollTop);
-
     }
   }
-  function loaded(){
+
+  const loaded= ()=>{
     document.querySelector(".App").addEventListener('scroll',scrolled);
+
   }
+
   var isMobile;
   if(!window.matchMedia){
     isMobile=true;
@@ -34,6 +37,7 @@ function App() {
       <Route path ='/product/:id' element={<ProductPage/>}/>
       <Route path='/sign/:type' element={<Signing/>}/>      
       <Route path='/products' element={<MainGrid/>}/>
+      <Route path='/cart' element={<CartPage/>}/>
     </Routes>
   </div>
 

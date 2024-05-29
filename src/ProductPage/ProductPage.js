@@ -5,10 +5,9 @@ import { BuyUI } from './BuyUI';
 import { ImgSlider } from '../ImgSlider/ImgSlider';
 
 
-function ProductPage(){
-
-  
-  const {id} = useParams();
+function ProductPage(){  
+  const params = useParams();
+  const {id} = params;
   var [response,setResponse] = useState();
 
   useEffect(()=>{
@@ -29,7 +28,7 @@ function ProductPage(){
       
     }).catch((err)=>{console.log(err);});
 
-  })
+  },[params])
 
   const {_id,price,images,name,description,available} = response?response:{};
 

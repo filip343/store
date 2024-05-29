@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import cartIm from '../assets/imgs/menu/cart.png';
 import CartProd from './CartProd';
 import { useState } from 'react';
@@ -15,7 +16,7 @@ function Cart(){
   }
   var cart = [];
   cart = JSON.parse(localStorage.getItem('cart'));
-  return(<div className="Menu_Cart" onMouseOver={changeToVisible} onMouseLeave={changeToHidden}>
+  return(<Link className="Menu_Cart" onMouseOver={changeToVisible} onMouseLeave={changeToHidden} to={'/cart'}>
     <div id="img"><img src={cartIm} alt='cart'/></div>
     <div className={'Menu_List' + (!listVisibility?' hide':'')} onMouseOver={changeToVisible} onMouseLeave={changeToHidden}>
       {cart.length!==0?
@@ -36,7 +37,7 @@ function Cart(){
         </div>
       }
     </div>
-  </div>);
+  </Link>);
 }
 
 export default Cart;

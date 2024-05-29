@@ -19,7 +19,6 @@ export function BuyUI(params){
     
     if(quantToSet>available)quantToSet=quantity;
     setQuantity(quantToSet);
-    console.log(direction);
   }
   const preventInput = (evt)=>{
     var keys =["e","E","+","-",",",".","Enter"]
@@ -74,8 +73,8 @@ export function BuyUI(params){
         <div className="totalPrice">{`TOTAL PRICE: $${(price*quantity).toFixed(2)}`}</div>
       </div>
       <div className="buyBtns">
-        <div className="buy">BUY</div>
-        <div className="toCart" onClick={addToCart}>ADD TO CART</div>
+        <button className="buy" onClick={(e)=>{e.preventDefault();}}>BUY</button>
+        <button className="toCart" onClick={(e)=>{e.preventDefault();addToCart()}}>ADD TO CART</button>
       </div>
     </div>
   </div>

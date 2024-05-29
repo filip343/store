@@ -124,11 +124,21 @@
     }
     .cartProd{
       display: grid;
-      grid-template-columns: 2fr 1fr;
+      grid-template-columns: 3fr 2fr;
       grid-template-rows: 1fr 1fr;
-      font-size: 1.5vw;
+      font-size: 1.2vw;
+      border-bottom: solid 1px black;
+      grid-template-areas: 'name price' '. totalPrice';
       .name{
-
+        grid-area: name;
+      }
+      .pricePerOne{
+        border-left: 1px solid black;
+        grid-area: price;
+      }
+      .priceTotal{
+        border-left: 1px solid black;
+        grid-area: totalPrice;
       }
     }
   }
