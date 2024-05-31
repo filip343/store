@@ -56,6 +56,7 @@
       border-bottom: none;
     }
     .emptyCart:hover{
+      background-color:#ffffff01;
       box-shadow: none;
       cursor: default;
     }
@@ -128,7 +129,7 @@
       grid-template-rows: 1fr 1fr;
       font-size: 1.2vw;
       border-bottom: solid 1px black;
-      grid-template-areas: 'name price' '. totalPrice';
+      grid-template-areas: 'name price' 'remove totalPrice';
       .name{
         grid-area: name;
       }
@@ -139,6 +140,16 @@
       .priceTotal{
         border-left: 1px solid black;
         grid-area: totalPrice;
+      }
+      .remove{
+        margin-left: 10%;
+        border: none;
+        background: none;
+        grid-area: remove;
+        padding: 0.1vw;
+        height: 1.5vw;
+        aspect-ratio: 1;
+        cursor: pointer;
       }
     }
   }

@@ -19,7 +19,6 @@ function App() {
 
   const loaded= ()=>{
     document.querySelector(".App").addEventListener('scroll',scrolled);
-
   }
 
   var isMobile;

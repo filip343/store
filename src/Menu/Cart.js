@@ -7,6 +7,11 @@ import { useState } from 'react';
 function Cart(){
   const [listVisibility, setListVisibility] = useState(false);
   const [numOfShown,setNumOfShown] = useState(3);
+
+  const onClickNotLink = (e)=>{
+    e.stopPropagation();
+    e.preventDefault();
+  }
   const changeToVisible= ()=>{   
     setListVisibility(true);
   }
@@ -18,13 +23,13 @@ function Cart(){
   cart = JSON.parse(localStorage.getItem('cart'));
   return(<Link className="Menu_Cart" onMouseOver={changeToVisible} onMouseLeave={changeToHidden} to={'/cart'}>
     <div id="img"><img src={cartIm} alt='cart'/></div>
-    <div className={'Menu_List' + (!listVisibility?' hide':'')} onMouseOver={changeToVisible} onMouseLeave={changeToHidden}>
+    <div className={'Menu_List '+ (!listVisibility? 'hide':'')} onMouseOver={changeToVisible} onMouseLeave={changeToHidden}>
       {cart.length!==0?
         cart.map((elem,i)=>{
           if(i<numOfShown){
             return <CartProd elem={elem}/>
           }else if(cart.length>numOfShown&&i===cart.length-1){
-            return<div className="showMore" onClick={()=>{setNumOfShown(numOfShown+3)}}>
+            return<div className="showMore" onClick={(e)=>{onClickNotLink(e);setNumOfShown(numOfShown+3)}}>
               . . .
             </div>
           }
@@ -32,7 +37,7 @@ function Cart(){
 
           
         }):
-        <div className='emptyCart'>
+        <div className='emptyCart' onClick={(e)=>{onClickNotLink(e)}}>
           You don't have any items in the cart
         </div>
       }

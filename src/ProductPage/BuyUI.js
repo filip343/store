@@ -5,13 +5,10 @@ export function BuyUI(params){
 
   const {prodId,available,price,name} = params;
   const [quantity,setQuantity] = useState(1);
+
   const handleOnChange = (e)=>{
     e.preventDefault();
     changeQuantity(e);
-    if(e.target.value==="")
-    {
-      setQuantity(1);
-    }
   }
   const changeQuantity=(e, direction=0)=>{
     var iqua = parseInt(quantity);
@@ -62,7 +59,7 @@ export function BuyUI(params){
 
         <button className="minus" onClick={(e)=>{e.preventDefault();changeQuantity(undefined,-1)}}> - </button>
         
-        <input onKeyDown={(evt)=>preventInput(evt)} value={quantity} onChange={(e)=>{handleOnChange(e)}} type="number" min={1}/>
+        <input onKeyDown={(evt)=>preventInput(evt)} value={quantity} onBlur={(e)=>{if(e.target.value==="")setQuantity(1);}} onChange={(e)=>{handleOnChange(e)}} type="number" min={1}/>
 
         <button className="plus" onClick={(e)=>{e.preventDefault();changeQuantity(undefined,1)}}> + </button>
 
